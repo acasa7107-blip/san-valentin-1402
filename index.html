@@ -1,0 +1,219 @@
+!DOCTYPE html>  <html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>¿Quieres ser mi San Valentín?</title>  
+    <style>  
+        body {  
+            font-family: 'Arial', sans-serif;  
+            background: linear-gradient(135deg, #ff6b9d, #c44569);  
+            color: white;  
+            text-align: center;  
+            margin: 0;  
+            padding: 0;  
+            height: 100vh;  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            overflow: hidden;  
+        }  
+        .container {  
+            background: rgba(255, 255, 255, 0.1);  
+            border-radius: 20px;  
+            padding: 40px;  
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);  
+            max-width: 500px;  
+            width: 90%;  
+        }  
+        h1 {  
+            font-size: 2.5em;  
+            margin-bottom: 30px;  
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+        }  
+        .buttons {  
+            display: flex;  
+            justify-content: space-around;  
+            margin-top: 30px;  
+        }  
+        button {  
+            padding: 15px 30px;  
+            font-size: 1.2em;  
+            border: none;  
+            border-radius: 50px;  
+            cursor: pointer;  
+            transition: all 0.3s ease;  
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  
+        }  
+        #si {  
+            background: #ff4757;  
+            color: white;  
+            transform: scale(1);  
+        }  
+        #no {  
+            background: #3742fa;  
+            color: white;  
+        }  
+        #no:hover {  
+            background: #2f3542;  
+        }  
+        .felicidades {  
+            display: none;  
+            font-size: 1.5em;  
+            margin-top: 20px;  
+        }  
+        .corazon {  
+            font-size: 3em;  
+            animation: latir 1s infinite;  
+        }  
+        @keyframes latir {  
+            0%, 100% { transform: scale(1); }  
+            50% { transform: scale(1.1); }  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <div class="corazon">❤️</div>  
+        <h1>¿Quieres ser mi San Valentín?</h1>  
+        <div class="buttons">  
+            <button id="si">Sí</button>  
+            <button id="no">No</button>  
+        </div>  
+        <div class="felicidades" id="felicidades">  
+            <p>¡Felicidades! Nos vemos en [LUGAR], el [FECHA] a las [HORA]. Te amo. ❤️</p>  
+        </div>  
+    </div>  <script>  
+    let siButton = document.getElementById('si');  
+    let noButton = document.getElementById('no');  
+    let felicidades = document.getElementById('felicidades');  
+    let scale = 1;  
+
+    noButton.addEventListener('click', function() {  
+        scale += 0.5; // El botón "Sí" crece cada vez que se presiona "No"  
+        siButton.style.transform = `scale(${scale})`;  
+        // Opcional: Mover el botón "No" para hacerlo más juguetón  
+        noButton.style.position = 'relative';  
+        noButton.style.left = Math.random() * 100 - 50 + 'px';  
+        noButton.style.top = Math.random() * 100 - 50 + 'px';  
+    });  
+
+    siButton.addEventListener('click', function() {  
+        // Ocultar la pregunta y mostrar la felicitación  
+        document.querySelector('.buttons').style.display = 'none';  
+        document.querySelector('h1').style.display = 'none';  
+        document.querySelector('.corazon').style.display = 'none';  
+        felicidades.style.display = 'block';  
+    });  
+</script>
+
+</body>  
+</html>!DOCTYPE html>  <html lang="es">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>¿Quieres ser mi San Valentín?</title>  
+    <style>  
+        body {  
+            font-family: 'Arial', sans-serif;  
+            background: linear-gradient(135deg, #ff6b9d, #c44569);  
+            color: white;  
+            text-align: center;  
+            margin: 0;  
+            padding: 0;  
+            height: 100vh;  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            overflow: hidden;  
+        }  
+        .container {  
+            background: rgba(255, 255, 255, 0.1);  
+            border-radius: 20px;  
+            padding: 40px;  
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);  
+            max-width: 500px;  
+            width: 90%;  
+        }  
+        h1 {  
+            font-size: 2.5em;  
+            margin-bottom: 30px;  
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
+        }  
+        .buttons {  
+            display: flex;  
+            justify-content: space-around;  
+            margin-top: 30px;  
+        }  
+        button {  
+            padding: 15px 30px;  
+            font-size: 1.2em;  
+            border: none;  
+            border-radius: 50px;  
+            cursor: pointer;  
+            transition: all 0.3s ease;  
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);  
+        }  
+        #si {  
+            background: #ff4757;  
+            color: white;  
+            transform: scale(1);  
+        }  
+        #no {  
+            background: #3742fa;  
+            color: white;  
+        }  
+        #no:hover {  
+            background: #2f3542;  
+        }  
+        .felicidades {  
+            display: none;  
+            font-size: 1.5em;  
+            margin-top: 20px;  
+        }  
+        .corazon {  
+            font-size: 3em;  
+            animation: latir 1s infinite;  
+        }  
+        @keyframes latir {  
+            0%, 100% { transform: scale(1); }  
+            50% { transform: scale(1.1); }  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="container">  
+        <div class="corazon">❤️</div>  
+        <h1>¿Quieres ser mi San Valentín?</h1>  
+        <div class="buttons">  
+            <button id="si">Sí</button>  
+            <button id="no">No</button>  
+        </div>  
+        <div class="felicidades" id="felicidades">  
+            <p>¡Felicidades! Nos vemos en [LUGAR], el [FECHA] a las [HORA]. Te amo. ❤️</p>  
+        </div>  
+    </div>  <script>  
+    let siButton = document.getElementById('si');  
+    let noButton = document.getElementById('no');  
+    let felicidades = document.getElementById('felicidades');  
+    let scale = 1;  
+
+    noButton.addEventListener('click', function() {  
+        scale += 0.5; // El botón "Sí" crece cada vez que se presiona "No"  
+        siButton.style.transform = `scale(${scale})`;  
+        // Opcional: Mover el botón "No" para hacerlo más juguetón  
+        noButton.style.position = 'relative';  
+        noButton.style.left = Math.random() * 100 - 50 + 'px';  
+        noButton.style.top = Math.random() * 100 - 50 + 'px';  
+    });  
+
+    siButton.addEventListener('click', function() {  
+        // Ocultar la pregunta y mostrar la felicitación  
+        document.querySelector('.buttons').style.display = 'none';  
+        document.querySelector('h1').style.display = 'none';  
+        document.querySelector('.corazon').style.display = 'none';  
+        felicidades.style.display = 'block';  
+    });  
+</script>
+
+</body>  
+</html>
